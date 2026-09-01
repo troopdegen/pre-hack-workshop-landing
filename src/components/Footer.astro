@@ -1,0 +1,96 @@
+---
+const today = new Date().toISOString().slice(0, 10);
+---
+<footer class="ftr">
+  <div class="wrap ftr-inner">
+    <div class="ftr-col ftr-brand">
+      <span class="brand-mark">▮</span>
+      <span class="brand-word">stack.</span>
+      <p class="dim small">A working name. Replace when the project has one.</p>
+    </div>
+
+    <div class="ftr-col">
+      <h4>Project</h4>
+      <p>Independent demo artifact built during pre-hack workshops at Burning Token. Not an official Burning Token product.</p>
+    </div>
+
+    <div class="ftr-col">
+      <h4>What is not here</h4>
+      <p>No sponsor logos. No testimonials. No platform or API access claims. No deployment in this build.</p>
+    </div>
+
+    <div class="ftr-col">
+      <h4>Status</h4>
+      <p>Vertical demo · Workshop 1 artifact · not deployed.</p>
+      <p>Last touched: <time>{today}</time></p>
+    </div>
+  </div>
+
+  <div class="wrap ftr-bottom">
+    <div>Built with Astro · local preview only</div>
+    <div>No account, no keys, no tracking in this build.</div>
+  </div>
+</footer>
+<style>
+  .ftr {
+    background: var(--frame);
+    color: var(--paper);
+    padding: clamp(3rem, 7vw, 5rem) 0 1.5rem;
+  }
+  .ftr-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+  @media (max-width: 880px) {
+    .ftr-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 540px) {
+    .ftr-inner { grid-template-columns: 1fr; }
+  }
+  .ftr-brand { display: grid; gap: 0.5rem; align-content: start; }
+  .brand-mark {
+    display: inline-grid;
+    place-items: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    background: var(--magenta);
+    color: var(--paper);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+  .brand-word {
+    font-family: var(--mono);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-size: 1rem;
+  }
+  .ftr h4 {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    margin-bottom: 0.75rem;
+  }
+  .ftr p {
+    color: rgb(249 245 239 / 0.78);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .dim { color: rgb(249 245 239 / 0.55); }
+  .small { font-size: 0.78rem; }
+  .ftr-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgb(249 245 239 / 0.15);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: rgb(249 245 239 / 0.55);
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+</style>

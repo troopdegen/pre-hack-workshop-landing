@@ -1,0 +1,70 @@
+---
+---
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark">▮</span>
+      <span class="brand-word">stack.</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#why">Why</a>
+      <a href="#how">How</a>
+      <a href="#agents">Agents</a>
+      <a href="#sponsor">Sponsor</a>
+    </nav>
+    <a class="btn btn-secondary nav-cta" href="#submit">Submit a link</a>
+  </div>
+</header>
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgb(249 245 239 / 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 4rem;
+    gap: 1rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    text-decoration: none;
+    color: var(--ink);
+    font-family: var(--mono);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-size: 0.95rem;
+  }
+  .brand-mark {
+    display: inline-grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.4rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { padding: 0.5rem 0.85rem; font-size: 0.85rem; }
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+</style>

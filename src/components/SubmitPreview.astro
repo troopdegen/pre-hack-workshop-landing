@@ -1,0 +1,131 @@
+---
+---
+<section id="submit" class="submit">
+  <div class="wrap">
+    <p class="eyebrow">Try it</p>
+    <h2>Paste a link. Tag it. Preview the flow.</h2>
+    <p class="lede">
+      What the submission flow will look like. This is a static preview — submissions are not enabled in this build.
+    </p>
+
+    <div class="demo-frame">
+      <form class="demo-form" onsubmit="event.preventDefault();">
+        <label>
+          <span>URL</span>
+          <input type="url" placeholder="https://example.com/article" autocomplete="off" />
+        </label>
+        <label>
+          <span>Tag</span>
+          <input type="text" placeholder="e.g. agents, evals, rag" autocomplete="off" />
+        </label>
+        <button type="submit" class="btn btn-primary">Review with LLM →</button>
+      </form>
+
+      <aside class="demo-result">
+        <header class="demo-result-head">
+          <span class="dot" aria-hidden="true"></span>
+          <span>LLM suggestion · not yet confirmed</span>
+        </header>
+        <h4>Suggested title appears here</h4>
+        <p class="muted">Short summary line. Two or three sentences. Tag suggestions.</p>
+        <pre class="code"><code>{`{
+  "title": "...",
+  "tags": ["agents", "evals"],
+  "summary": "...",
+  "confidence": 0.74
+}`}</code></pre>
+        <div class="demo-actions">
+          <button class="btn btn-primary btn-small" type="button">Confirm & publish</button>
+          <button class="btn btn-secondary btn-small" type="button">Edit</button>
+          <button class="btn btn-ghost btn-small" type="button">Discard</button>
+        </div>
+        <p class="muted small">Preview only — submission flow not active in this build.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+<style>
+  .submit {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .submit .lede { margin: -0.5rem 0 2rem; }
+  .demo-frame {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+  @media (max-width: 880px) {
+    .demo-frame { grid-template-columns: 1fr; }
+  }
+  .demo-form {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--card);
+  }
+  .demo-form label {
+    display: grid;
+    gap: 0.35rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .demo-form input {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.7rem 0.85rem;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1rem;
+  }
+  .demo-form input:focus { border-color: var(--magenta); outline: none; }
+  .demo-form button[type="submit"] { justify-self: start; margin-top: 0.5rem; }
+
+  .demo-result {
+    padding: 1.5rem;
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    background: var(--card);
+  }
+  .demo-result-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: var(--magenta);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .demo-result h4 { margin-bottom: 0.5rem; }
+  .code {
+    background: var(--frame);
+    color: var(--paper);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .muted { color: var(--muted); }
+  .small { font-size: 0.78rem; font-family: var(--mono); margin-top: 1rem; }
+  .demo-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-small { padding: 0.5rem 0.85rem; font-size: 0.85rem; }
+</style>

@@ -1,0 +1,55 @@
+---
+---
+<section id="why" class="why">
+  <div class="wrap">
+    <p class="eyebrow">Why</p>
+    <h2>Stop losing AI resources to your notes app.</h2>
+    <p class="lede">
+      AI learning links die in DMs, bookmarks, half-finished docs. You cannot find what worked last month. Other builders hit the same wall. This is a single place for the links that actually help.
+    </p>
+
+    <div class="why-grid">
+      <article class="why-cell">
+        <p class="num">01</p>
+        <h3>Notes get lost</h3>
+        <p>Tutorials saved across three apps, none open when you need them.</p>
+      </article>
+      <article class="why-cell">
+        <p class="num">02</p>
+        <h3>Bookmarks rot</h3>
+        <p>Half the links no longer resolve or describe the thing that mattered.</p>
+      </article>
+      <article class="why-cell">
+        <p class="num">03</p>
+        <h3>Builders reinvent</h3>
+        <p>The same five awesome tutorials get rediscovered over and over.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<style>
+  .why {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .why .lede { margin-bottom: 3rem; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 760px) {
+    .why-grid { grid-template-columns: 1fr; }
+  }
+  .why-cell {
+    border-top: 1px solid var(--ink);
+    padding-top: 1rem;
+  }
+  .num {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted-2);
+    margin-bottom: 0.5rem;
+  }
+  .why-cell h3 { margin-bottom: 0.75rem; }
+</style>

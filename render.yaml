@@ -1,0 +1,20 @@
+services:
+  - type: static_site
+    name: pre-hack-workshop-landing
+    runtime: static
+    rootDirectory: .
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    autoDeploy: false
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      - type: rewrite
+        from: /*
+        to: /index.html
+        status: 404

@@ -1,0 +1,90 @@
+---
+---
+<section id="agents" class="agents bg-grid">
+  <div class="wrap">
+    <p class="eyebrow">For agents</p>
+    <h2>Point your agents at it.</h2>
+    <p class="lede">
+      Read-only static feeds, designed so tooling — not just humans — can read what is already validated. Spec preview below; not deployed.
+    </p>
+
+    <div class="agents-grid">
+      <div>
+        <h3>What an agent gets</h3>
+        <ul>
+          <li>Validated entries with confirmed summaries.</li>
+          <li>Tags indexed for fast filtering.</li>
+          <li>Confidence scores you can request or ignore.</li>
+          <li>No auth flow. Cached. Plain JSON.</li>
+        </ul>
+      </div>
+      <div class="code-block">
+        <p class="code-label">GET /tags.json</p>
+<pre><code>{`{
+  "agents": 12,
+  "evals": 9,
+  "rag": 7,
+  "alignment": 4,
+  "tools": 11
+}`}</code></pre>
+        <p class="code-label">GET /feed.json?tag=evals</p>
+<pre><code>{`[
+  {
+    "title": "...",
+    "url": "...",
+    "tags": ["evals", "agents"],
+    "rank": 0.94,
+    "confirmed_by": 3
+  }
+]`}</code></pre>
+      </div>
+    </div>
+    <p class="muted small">Spec preview — endpoints not deployed in this build.</p>
+  </div>
+</section>
+<style>
+  .agents {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .agents .lede { margin-bottom: 2rem; }
+  .agents-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+  @media (max-width: 880px) {
+    .agents-grid { grid-template-columns: 1fr; }
+  }
+  .agents-grid ul {
+    padding-left: 1.1rem;
+    margin: 1rem 0 0;
+  }
+  .agents-grid li {
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+  }
+  .code-block {
+    background: var(--frame);
+    color: var(--paper);
+    border-radius: 4px;
+    padding: 1.5rem;
+    font-family: var(--mono);
+  }
+  .code-label {
+    color: var(--magenta);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 1rem 0 0.5rem;
+  }
+  .code-label:first-child { margin-top: 0; }
+  .code-block pre {
+    margin: 0;
+    font-size: 0.78rem;
+    white-space: pre-wrap;
+  }
+  .muted { color: var(--muted); }
+  .small { font-size: 0.78rem; font-family: var(--mono); margin-top: 1.5rem; }
+</style>

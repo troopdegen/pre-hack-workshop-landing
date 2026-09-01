@@ -1,0 +1,69 @@
+---
+---
+<section id="how" class="how bg-grid">
+  <div class="wrap">
+    <p class="eyebrow">How</p>
+    <h2>Three actions. One human gate.</h2>
+    <p class="lede">
+      Every entry passes through the same loop. You stay in control — nothing publishes without your sign-off.
+    </p>
+
+    <ol class="steps">
+      <li class="step">
+        <div class="step-num">01</div>
+        <div>
+          <h3>Paste a URL</h3>
+          <p>Tutorial, paper, repo, video, dataset. Plain URL, no account required to start.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num">02</div>
+        <div>
+          <h3>Tag it</h3>
+          <p>Pick from existing tags or add the one that is missing. Discoverability is a first-class move.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num">03</div>
+        <div>
+          <h3>Review</h3>
+          <p>An LLM reads the content and suggests a summary, tag, and a confidence. You confirm, edit, or throw it out. Rank follows use, not votes.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+<style>
+  .how {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .how .lede { margin-bottom: 3rem; }
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--card);
+  }
+  .step-num {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--magenta);
+    line-height: 1;
+    align-self: start;
+  }
+  @media (max-width: 560px) {
+    .step { grid-template-columns: 1fr; gap: 0.75rem; }
+  }
+</style>
